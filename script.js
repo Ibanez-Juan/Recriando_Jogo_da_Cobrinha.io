@@ -2,6 +2,8 @@ let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
 let box = 32;
 let snake = [];
+
+pontuacao = 0;
 snake[0] = {
     x: 8 * box,
     y: 8 * box
@@ -71,8 +73,9 @@ function iniciarJogo() {
     } else {
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
+        pontuacao = pontuacao + 1;
+        document.getElementById("pontuacao").innerHTML = pontuacao;
     }
-
 
 
     let newHead = {
